@@ -1,11 +1,11 @@
-import pyttsx3
-import datetime
-import speech_recognition as sr
-import wikipedia
-import datetime
-import webbrowser as web
-import os
-import smtplib
+import pyttsx3 #pip install pyttsx3
+import datetime #built in
+import speech_recognition as sr #pip install SpeechRecognition
+import wikipedia #built in
+import datetime #built in
+import webbrowser as web  #pip install webbrowser
+import os #built in
+import smtplib #built in
 
 engine = pyttsx3.init('sapi5')
 
@@ -46,8 +46,8 @@ def send_email(to,content):
     server=smtplib.SMTP("smtp.gmail.com",587)
     server.ehlo()
     server.starttls()
-    server.login("deshkarmm@rknec.edu","Malhar232*")
-    server.sendmail("deshkarmm@rknec.edu",to,content)
+    server.login("sender's email","Your password")
+    server.sendmail("sender's email",to,content)
     server.close()
 
 if __name__=="__main__":
@@ -90,12 +90,12 @@ while True:
     elif  "open vs code" in query:
         
         speak("Opening VS Code...")
-        code_path="C:\\Users\\malha\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+        code_path="C:\\Users\\malha\\AppData\\Microsoft VS Code\\Code.exe" #Enter path of your VS code or any code editor in this format
         os.startfile(code_path)
 
     elif "play music" in query:
         speak("Playing songs...")
-        music_dir="C:\\Users\\malha\\Desktop\\music"
+        music_dir="C:\\Users\\malha\\Desktop\\music" #Enter path of your music folder in this format
         songs=os.listdir(music_dir)
         print(songs)
         os.startfile(os.path.join(music_dir,songs[0]))
